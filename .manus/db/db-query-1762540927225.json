@@ -1,0 +1,13 @@
+{
+  "query": "SELECT associadoId FROM responsaveis_legais LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Pd5xrG93qsf9ku.root --database oDWoyZUirJKdUcvdtj46ez --execute SELECT associadoId FROM responsaveis_legais LIMIT 1;",
+  "rows": [
+    {
+      "associadoId": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "associadoId\n1\n",
+  "stderr": "",
+  "execution_time_ms": 54
+}

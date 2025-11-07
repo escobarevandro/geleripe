@@ -1,0 +1,642 @@
+{
+  "query": "DESCRIBE fichas_medicas;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Pd5xrG93qsf9ku.root --database oDWoyZUirJKdUcvdtj46ez --execute DESCRIBE fichas_medicas;",
+  "rows": [
+    {
+      "Field": "id",
+      "Type": "int(11)",
+      "Null": "NO",
+      "Key": "PRI",
+      "Default": "NULL",
+      "Extra": "auto_increment"
+    },
+    {
+      "Field": "associadoId",
+      "Type": "int(11)",
+      "Null": "NO",
+      "Key": "UNI",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "tipoSanguineo",
+      "Type": "varchar(5)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "fatorRh",
+      "Type": "enum('+','-')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "peso",
+      "Type": "decimal(5,2)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "altura",
+      "Type": "decimal(3,2)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "equipamentoAuxilio",
+      "Type": "enum('Nenhum','Óculos','Lente de Contato','Aparelho Auditivo','Prótese','Outro')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "equipamentoAuxilioOutro",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "saudeFisica",
+      "Type": "enum('Normal','Alterada')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "saudeFisicaObs",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "medicamentoUso",
+      "Type": "enum('Nenhum','Sim')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "medicamentoUsoLista",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "sabeNadar",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "restricaoAlimentar",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "temAlergias",
+      "Type": "enum('Nenhuma','Sim')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaPicadaInseto",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaPicadaInsetoCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaMedicamentos",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaMedicamentosCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaPlantas",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaPlantasCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaAlimentos",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaAlimentosCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaAcaros",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaAcarosCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaFungos",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaFungosCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaOutro",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "alergiaOutroCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "jaTeveConvulsao",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "jaTeveConvulsaoObs",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "jaDesmaiou",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "jaDesmaiouObs",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "jaSofreuCirurgia",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "jaSofreuCirurgiaObs",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "jaFoiInternado",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "jaFoiInternadoObs",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "jaTeveDoencaGrave",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "jaTeveDoencaGraveObs",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "acompanhamentoPsicologico",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "acompanhamentoPsicologicoObs",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "acompanhamentoPsiquiatrico",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "acompanhamentoPsiquiatricoObs",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "acompanhamentoNeurologico",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "acompanhamentoNeurologicoObs",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "acompanhamentoFonoaudiologo",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "acompanhamentoFonoaudiologoObs",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "temDeficiencias",
+      "Type": "enum('Não','Sim')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "deficienciaFisica",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "deficienciaFisicaCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "deficienciaVisual",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "deficienciaVisualCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "deficienciaAuditiva",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "deficienciaAuditivaCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "deficienciaIntelectual",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "deficienciaIntelectualCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "deficienciaOutra",
+      "Type": "tinyint(1)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "deficienciaOutraCite",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoHiperatividade",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoHiperatividadeDesc",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoDeficitAtencao",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoDeficitAtencaoDesc",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoAgressividade",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoAgressividadeDesc",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoTimidez",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoTimidezDesc",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoAnsiedade",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoAnsiedadeDesc",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoDepressao",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoDepressaoDesc",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoDificuldadeAprendizado",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoDificuldadeAprendizadoDesc",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoDificuldadeSocializacao",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoDificuldadeSocializacaoDesc",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoOutros",
+      "Type": "enum('Sim','Não')",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "comportamentoOutrosDesc",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "observacoesGerais",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "createdAt",
+      "Type": "timestamp",
+      "Null": "NO",
+      "Key": "",
+      "Default": "CURRENT_TIMESTAMP",
+      "Extra": ""
+    },
+    {
+      "Field": "updatedAt",
+      "Type": "timestamp",
+      "Null": "NO",
+      "Key": "",
+      "Default": "CURRENT_TIMESTAMP",
+      "Extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+    }
+  ],
+  "messages": [],
+  "stdout": "Field\tType\tNull\tKey\tDefault\tExtra\nid\tint(11)\tNO\tPRI\tNULL\tauto_increment\nassociadoId\tint(11)\tNO\tUNI\tNULL\t\ntipoSanguineo\tvarchar(5)\tYES\t\tNULL\t\nfatorRh\tenum('+','-')\tYES\t\tNULL\t\npeso\tdecimal(5,2)\tYES\t\tNULL\t\naltura\tdecimal(3,2)\tYES\t\tNULL\t\nequipamentoAuxilio\tenum('Nenhum','Óculos','Lente de Contato','Aparelho Auditivo','Prótese','Outro')\tYES\t\tNULL\t\nequipamentoAuxilioOutro\ttext\tYES\t\tNULL\t\nsaudeFisica\tenum('Normal','Alterada')\tYES\t\tNULL\t\nsaudeFisicaObs\ttext\tYES\t\tNULL\t\nmedicamentoUso\tenum('Nenhum','Sim')\tYES\t\tNULL\t\nmedicamentoUsoLista\ttext\tYES\t\tNULL\t\nsabeNadar\tenum('Sim','Não')\tYES\t\tNULL\t\nrestricaoAlimentar\ttext\tYES\t\tNULL\t\ntemAlergias\tenum('Nenhuma','Sim')\tYES\t\tNULL\t\nalergiaPicadaInseto\ttinyint(1)\tYES\t\t0\t\nalergiaPicadaInsetoCite\ttext\tYES\t\tNULL\t\nalergiaMedicamentos\ttinyint(1)\tYES\t\t0\t\nalergiaMedicamentosCite\ttext\tYES\t\tNULL\t\nalergiaPlantas\ttinyint(1)\tYES\t\t0\t\nalergiaPlantasCite\ttext\tYES\t\tNULL\t\nalergiaAlimentos\ttinyint(1)\tYES\t\t0\t\nalergiaAlimentosCite\ttext\tYES\t\tNULL\t\nalergiaAcaros\ttinyint(1)\tYES\t\t0\t\nalergiaAcarosCite\ttext\tYES\t\tNULL\t\nalergiaFungos\ttinyint(1)\tYES\t\t0\t\nalergiaFungosCite\ttext\tYES\t\tNULL\t\nalergiaOutro\ttinyint(1)\tYES\t\t0\t\nalergiaOutroCite\ttext\tYES\t\tNULL\t\njaTeveConvulsao\tenum('Sim','Não')\tYES\t\tNULL\t\njaTeveConvulsaoObs\ttext\tYES\t\tNULL\t\njaDesmaiou\tenum('Sim','Não')\tYES\t\tNULL\t\njaDesmaiouObs\ttext\tYES\t\tNULL\t\njaSofreuCirurgia\tenum('Sim','Não')\tYES\t\tNULL\t\njaSofreuCirurgiaObs\ttext\tYES\t\tNULL\t\njaFoiInternado\tenum('Sim','Não')\tYES\t\tNULL\t\njaFoiInternadoObs\ttext\tYES\t\tNULL\t\njaTeveDoencaGrave\tenum('Sim','Não')\tYES\t\tNULL\t\njaTeveDoencaGraveObs\ttext\tYES\t\tNULL\t\nacompanhamentoPsicologico\tenum('Sim','Não')\tYES\t\tNULL\t\nacompanhamentoPsicologicoObs\ttext\tYES\t\tNULL\t\nacompanhamentoPsiquiatrico\tenum('Sim','Não')\tYES\t\tNULL\t\nacompanhamentoPsiquiatricoObs\ttext\tYES\t\tNULL\t\nacompanhamentoNeurologico\tenum('Sim','Não')\tYES\t\tNULL\t\nacompanhamentoNeurologicoObs\ttext\tYES\t\tNULL\t\nacompanhamentoFonoaudiologo\tenum('Sim','Não')\tYES\t\tNULL\t\nacompanhamentoFonoaudiologoObs\ttext\tYES\t\tNULL\t\ntemDeficiencias\tenum('Não','Sim')\tYES\t\tNULL\t\ndeficienciaFisica\ttinyint(1)\tYES\t\t0\t\ndeficienciaFisicaCite\ttext\tYES\t\tNULL\t\ndeficienciaVisual\ttinyint(1)\tYES\t\t0\t\ndeficienciaVisualCite\ttext\tYES\t\tNULL\t\ndeficienciaAuditiva\ttinyint(1)\tYES\t\t0\t\ndeficienciaAuditivaCite\ttext\tYES\t\tNULL\t\ndeficienciaIntelectual\ttinyint(1)\tYES\t\t0\t\ndeficienciaIntelectualCite\ttext\tYES\t\tNULL\t\ndeficienciaOutra\ttinyint(1)\tYES\t\t0\t\ndeficienciaOutraCite\ttext\tYES\t\tNULL\t\ncomportamentoHiperatividade\tenum('Sim','Não')\tYES\t\tNULL\t\ncomportamentoHiperatividadeDesc\ttext\tYES\t\tNULL\t\ncomportamentoDeficitAtencao\tenum('Sim','Não')\tYES\t\tNULL\t\ncomportamentoDeficitAtencaoDesc\ttext\tYES\t\tNULL\t\ncomportamentoAgressividade\tenum('Sim','Não')\tYES\t\tNULL\t\ncomportamentoAgressividadeDesc\ttext\tYES\t\tNULL\t\ncomportamentoTimidez\tenum('Sim','Não')\tYES\t\tNULL\t\ncomportamentoTimidezDesc\ttext\tYES\t\tNULL\t\ncomportamentoAnsiedade\tenum('Sim','Não')\tYES\t\tNULL\t\ncomportamentoAnsiedadeDesc\ttext\tYES\t\tNULL\t\ncomportamentoDepressao\tenum('Sim','Não')\tYES\t\tNULL\t\ncomportamentoDepressaoDesc\ttext\tYES\t\tNULL\t\ncomportamentoDificuldadeAprendizado\tenum('Sim','Não')\tYES\t\tNULL\t\ncomportamentoDificuldadeAprendizadoDesc\ttext\tYES\t\tNULL\t\ncomportamentoDificuldadeSocializacao\tenum('Sim','Não')\tYES\t\tNULL\t\ncomportamentoDificuldadeSocializacaoDesc\ttext\tYES\t\tNULL\t\ncomportamentoOutros\tenum('Sim','Não')\tYES\t\tNULL\t\ncomportamentoOutrosDesc\ttext\tYES\t\tNULL\t\nobservacoesGerais\ttext\tYES\t\tNULL\t\ncreatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t\nupdatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\tDEFAULT_GENERATED on update CURRENT_TIMESTAMP\n",
+  "stderr": "",
+  "execution_time_ms": 47
+}

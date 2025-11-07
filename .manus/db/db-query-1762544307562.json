@@ -1,0 +1,247 @@
+{
+  "query": "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'fichas_medicas' ORDER BY ORDINAL_POSITION;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Pd5xrG93qsf9ku.root --database oDWoyZUirJKdUcvdtj46ez --execute SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'fichas_medicas' ORDER BY ORDINAL_POSITION;",
+  "rows": [
+    {
+      "COLUMN_NAME": "id"
+    },
+    {
+      "COLUMN_NAME": "associadoId"
+    },
+    {
+      "COLUMN_NAME": "tipoSanguineo"
+    },
+    {
+      "COLUMN_NAME": "fatorRh"
+    },
+    {
+      "COLUMN_NAME": "peso"
+    },
+    {
+      "COLUMN_NAME": "altura"
+    },
+    {
+      "COLUMN_NAME": "equipamentoAuxilio"
+    },
+    {
+      "COLUMN_NAME": "equipamentoAuxilioOutro"
+    },
+    {
+      "COLUMN_NAME": "saudeFisica"
+    },
+    {
+      "COLUMN_NAME": "saudeFisicaObs"
+    },
+    {
+      "COLUMN_NAME": "medicamentoUso"
+    },
+    {
+      "COLUMN_NAME": "medicamentoUsoLista"
+    },
+    {
+      "COLUMN_NAME": "sabeNadar"
+    },
+    {
+      "COLUMN_NAME": "restricaoAlimentar"
+    },
+    {
+      "COLUMN_NAME": "temAlergias"
+    },
+    {
+      "COLUMN_NAME": "alergiaPicadaInseto"
+    },
+    {
+      "COLUMN_NAME": "alergiaPicadaInsetoCite"
+    },
+    {
+      "COLUMN_NAME": "alergiaMedicamentos"
+    },
+    {
+      "COLUMN_NAME": "alergiaMedicamentosCite"
+    },
+    {
+      "COLUMN_NAME": "alergiaPlantas"
+    },
+    {
+      "COLUMN_NAME": "alergiaPlantasCite"
+    },
+    {
+      "COLUMN_NAME": "alergiaAlimentos"
+    },
+    {
+      "COLUMN_NAME": "alergiaAlimentosCite"
+    },
+    {
+      "COLUMN_NAME": "alergiaAcaros"
+    },
+    {
+      "COLUMN_NAME": "alergiaAcarosCite"
+    },
+    {
+      "COLUMN_NAME": "alergiaFungos"
+    },
+    {
+      "COLUMN_NAME": "alergiaFungosCite"
+    },
+    {
+      "COLUMN_NAME": "alergiaOutro"
+    },
+    {
+      "COLUMN_NAME": "alergiaOutroCite"
+    },
+    {
+      "COLUMN_NAME": "jaTeveConvulsao"
+    },
+    {
+      "COLUMN_NAME": "jaTeveConvulsaoObs"
+    },
+    {
+      "COLUMN_NAME": "jaDesmaiou"
+    },
+    {
+      "COLUMN_NAME": "jaDesmaiouObs"
+    },
+    {
+      "COLUMN_NAME": "jaSofreuCirurgia"
+    },
+    {
+      "COLUMN_NAME": "jaSofreuCirurgiaObs"
+    },
+    {
+      "COLUMN_NAME": "jaFoiInternado"
+    },
+    {
+      "COLUMN_NAME": "jaFoiInternadoObs"
+    },
+    {
+      "COLUMN_NAME": "jaTeveDoencaGrave"
+    },
+    {
+      "COLUMN_NAME": "jaTeveDoencaGraveObs"
+    },
+    {
+      "COLUMN_NAME": "acompanhamentoPsicologico"
+    },
+    {
+      "COLUMN_NAME": "acompanhamentoPsicologicoObs"
+    },
+    {
+      "COLUMN_NAME": "acompanhamentoPsiquiatrico"
+    },
+    {
+      "COLUMN_NAME": "acompanhamentoPsiquiatricoObs"
+    },
+    {
+      "COLUMN_NAME": "acompanhamentoNeurologico"
+    },
+    {
+      "COLUMN_NAME": "acompanhamentoNeurologicoObs"
+    },
+    {
+      "COLUMN_NAME": "acompanhamentoFonoaudiologo"
+    },
+    {
+      "COLUMN_NAME": "acompanhamentoFonoaudiologoObs"
+    },
+    {
+      "COLUMN_NAME": "temDeficiencias"
+    },
+    {
+      "COLUMN_NAME": "deficienciaFisica"
+    },
+    {
+      "COLUMN_NAME": "deficienciaFisicaCite"
+    },
+    {
+      "COLUMN_NAME": "deficienciaVisual"
+    },
+    {
+      "COLUMN_NAME": "deficienciaVisualCite"
+    },
+    {
+      "COLUMN_NAME": "deficienciaAuditiva"
+    },
+    {
+      "COLUMN_NAME": "deficienciaAuditivaCite"
+    },
+    {
+      "COLUMN_NAME": "deficienciaIntelectual"
+    },
+    {
+      "COLUMN_NAME": "deficienciaIntelectualCite"
+    },
+    {
+      "COLUMN_NAME": "deficienciaOutra"
+    },
+    {
+      "COLUMN_NAME": "deficienciaOutraCite"
+    },
+    {
+      "COLUMN_NAME": "comportamentoHiperatividade"
+    },
+    {
+      "COLUMN_NAME": "comportamentoHiperatividadeDesc"
+    },
+    {
+      "COLUMN_NAME": "comportamentoDeficitAtencao"
+    },
+    {
+      "COLUMN_NAME": "comportamentoDeficitAtencaoDesc"
+    },
+    {
+      "COLUMN_NAME": "comportamentoAgressividade"
+    },
+    {
+      "COLUMN_NAME": "comportamentoAgressividadeDesc"
+    },
+    {
+      "COLUMN_NAME": "comportamentoTimidez"
+    },
+    {
+      "COLUMN_NAME": "comportamentoTimidezDesc"
+    },
+    {
+      "COLUMN_NAME": "comportamentoAnsiedade"
+    },
+    {
+      "COLUMN_NAME": "comportamentoAnsiedadeDesc"
+    },
+    {
+      "COLUMN_NAME": "comportamentoDepressao"
+    },
+    {
+      "COLUMN_NAME": "comportamentoDepressaoDesc"
+    },
+    {
+      "COLUMN_NAME": "comportamentoDificuldadeAprendizado"
+    },
+    {
+      "COLUMN_NAME": "comportamentoDificuldadeAprendizadoDesc"
+    },
+    {
+      "COLUMN_NAME": "comportamentoDificuldadeSocializacao"
+    },
+    {
+      "COLUMN_NAME": "comportamentoDificuldadeSocializacaoDesc"
+    },
+    {
+      "COLUMN_NAME": "comportamentoOutros"
+    },
+    {
+      "COLUMN_NAME": "comportamentoOutrosDesc"
+    },
+    {
+      "COLUMN_NAME": "observacoesGerais"
+    },
+    {
+      "COLUMN_NAME": "createdAt"
+    },
+    {
+      "COLUMN_NAME": "updatedAt"
+    }
+  ],
+  "messages": [],
+  "stdout": "COLUMN_NAME\nid\nassociadoId\ntipoSanguineo\nfatorRh\npeso\naltura\nequipamentoAuxilio\nequipamentoAuxilioOutro\nsaudeFisica\nsaudeFisicaObs\nmedicamentoUso\nmedicamentoUsoLista\nsabeNadar\nrestricaoAlimentar\ntemAlergias\nalergiaPicadaInseto\nalergiaPicadaInsetoCite\nalergiaMedicamentos\nalergiaMedicamentosCite\nalergiaPlantas\nalergiaPlantasCite\nalergiaAlimentos\nalergiaAlimentosCite\nalergiaAcaros\nalergiaAcarosCite\nalergiaFungos\nalergiaFungosCite\nalergiaOutro\nalergiaOutroCite\njaTeveConvulsao\njaTeveConvulsaoObs\njaDesmaiou\njaDesmaiouObs\njaSofreuCirurgia\njaSofreuCirurgiaObs\njaFoiInternado\njaFoiInternadoObs\njaTeveDoencaGrave\njaTeveDoencaGraveObs\nacompanhamentoPsicologico\nacompanhamentoPsicologicoObs\nacompanhamentoPsiquiatrico\nacompanhamentoPsiquiatricoObs\nacompanhamentoNeurologico\nacompanhamentoNeurologicoObs\nacompanhamentoFonoaudiologo\nacompanhamentoFonoaudiologoObs\ntemDeficiencias\ndeficienciaFisica\ndeficienciaFisicaCite\ndeficienciaVisual\ndeficienciaVisualCite\ndeficienciaAuditiva\ndeficienciaAuditivaCite\ndeficienciaIntelectual\ndeficienciaIntelectualCite\ndeficienciaOutra\ndeficienciaOutraCite\ncomportamentoHiperatividade\ncomportamentoHiperatividadeDesc\ncomportamentoDeficitAtencao\ncomportamentoDeficitAtencaoDesc\ncomportamentoAgressividade\ncomportamentoAgressividadeDesc\ncomportamentoTimidez\ncomportamentoTimidezDesc\ncomportamentoAnsiedade\ncomportamentoAnsiedadeDesc\ncomportamentoDepressao\ncomportamentoDepressaoDesc\ncomportamentoDificuldadeAprendizado\ncomportamentoDificuldadeAprendizadoDesc\ncomportamentoDificuldadeSocializacao\ncomportamentoDificuldadeSocializacaoDesc\ncomportamentoOutros\ncomportamentoOutrosDesc\nobservacoesGerais\ncreatedAt\nupdatedAt\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}

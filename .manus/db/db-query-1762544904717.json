@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE fichas_medicas \nMODIFY COLUMN peso VARCHAR(10),\nMODIFY COLUMN altura VARCHAR(10);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Pd5xrG93qsf9ku.root --database oDWoyZUirJKdUcvdtj46ez --execute ALTER TABLE fichas_medicas \nMODIFY COLUMN peso VARCHAR(10),\nMODIFY COLUMN altura VARCHAR(10);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 901
+}

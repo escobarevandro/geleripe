@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE responsaveis_legais CHANGE COLUMN associadoBeneficiarioId associadoId INT NOT NULL;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Pd5xrG93qsf9ku.root --database oDWoyZUirJKdUcvdtj46ez --execute ALTER TABLE responsaveis_legais CHANGE COLUMN associadoBeneficiarioId associadoId INT NOT NULL;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 176
+}

@@ -1,0 +1,94 @@
+{
+  "query": "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'responsaveis_legais' AND TABLE_SCHEMA = DATABASE() ORDER BY ORDINAL_POSITION;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Pd5xrG93qsf9ku.root --database oDWoyZUirJKdUcvdtj46ez --execute SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'responsaveis_legais' AND TABLE_SCHEMA = DATABASE() ORDER BY ORDINAL_POSITION;",
+  "rows": [
+    {
+      "COLUMN_NAME": "id"
+    },
+    {
+      "COLUMN_NAME": "associadoId"
+    },
+    {
+      "COLUMN_NAME": "nomeCompleto"
+    },
+    {
+      "COLUMN_NAME": "parentesco"
+    },
+    {
+      "COLUMN_NAME": "sexo"
+    },
+    {
+      "COLUMN_NAME": "naturalDe"
+    },
+    {
+      "COLUMN_NAME": "naturalUf"
+    },
+    {
+      "COLUMN_NAME": "dataNascimento"
+    },
+    {
+      "COLUMN_NAME": "escolaridade"
+    },
+    {
+      "COLUMN_NAME": "corRaca"
+    },
+    {
+      "COLUMN_NAME": "endereco"
+    },
+    {
+      "COLUMN_NAME": "enderecoNumero"
+    },
+    {
+      "COLUMN_NAME": "enderecoComplemento"
+    },
+    {
+      "COLUMN_NAME": "bairro"
+    },
+    {
+      "COLUMN_NAME": "cidade"
+    },
+    {
+      "COLUMN_NAME": "uf"
+    },
+    {
+      "COLUMN_NAME": "cep"
+    },
+    {
+      "COLUMN_NAME": "telCelular"
+    },
+    {
+      "COLUMN_NAME": "telContato1"
+    },
+    {
+      "COLUMN_NAME": "telContato2"
+    },
+    {
+      "COLUMN_NAME": "email"
+    },
+    {
+      "COLUMN_NAME": "profissao"
+    },
+    {
+      "COLUMN_NAME": "localTrabalho"
+    },
+    {
+      "COLUMN_NAME": "rg"
+    },
+    {
+      "COLUMN_NAME": "rgOrgaoExpedidor"
+    },
+    {
+      "COLUMN_NAME": "cpf"
+    },
+    {
+      "COLUMN_NAME": "createdAt"
+    },
+    {
+      "COLUMN_NAME": "updatedAt"
+    }
+  ],
+  "messages": [],
+  "stdout": "COLUMN_NAME\nid\nassociadoId\nnomeCompleto\nparentesco\nsexo\nnaturalDe\nnaturalUf\ndataNascimento\nescolaridade\ncorRaca\nendereco\nenderecoNumero\nenderecoComplemento\nbairro\ncidade\nuf\ncep\ntelCelular\ntelContato1\ntelContato2\nemail\nprofissao\nlocalTrabalho\nrg\nrgOrgaoExpedidor\ncpf\ncreatedAt\nupdatedAt\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}
