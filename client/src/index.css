@@ -133,17 +133,18 @@
   }
 }
 
-/* Global decorative logo overlay used on all pages */
-.app-logo-overlay {
+/* Decorative background logo using a pseudo-element on body */
+body::before {
+  content: "";
   position: fixed;
-  right: 1rem;
-  top: 1rem;
-  width: 200px;
-  max-width: 30vw;
+  inset: 0; /* cover the viewport */
+  background-image: url('/logos/leripe_sem_fundo.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 30vw; /* scale responsively */
   opacity: 0.6; /* 60% transparency */
   pointer-events: none;
-  z-index: 0; /* sit behind content (content will be above at z-index:1) */
-  filter: none;
+  z-index: 0; /* behind content */
 }
 
 /* Ensure app content is rendered above the decorative logo */

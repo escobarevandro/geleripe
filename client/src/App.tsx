@@ -20,7 +20,6 @@ interface ProtectedRouteProps {
 import { LoginPage } from "./pages/Login";
 import { RegisterPage } from "./pages/Register";
 import { RecuperarSenhaPage } from "./pages/RecuperarSenha";
-import { APP_LOGO } from "@/const";
 
 function ProtectedRoute({ component: Component }: ProtectedRouteProps) {
   const { user, loading } = useAuth({ redirectOnUnauthenticated: true });
@@ -63,11 +62,6 @@ function App() {
         // switchable
       >
         <TooltipProvider>
-          {/* Decorative global logo overlay */}
-          {APP_LOGO && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={APP_LOGO} alt="" className="app-logo-overlay" />
-          )}
           <div className="site-content">
             <Toaster />
             <Router />
