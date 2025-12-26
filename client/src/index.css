@@ -134,7 +134,7 @@
 }
 
 /* Decorative background logo using a pseudo-element on body */
-body.has-bg-logo::before {
+body::before {
   content: "";
   position: fixed;
   inset: 0; /* cover the viewport */
