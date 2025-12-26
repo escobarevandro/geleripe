@@ -2,6 +2,9 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
+import { TRPCError } from "@trpc/server";
+import { generateImage } from "./_core/imageGeneration";
+import { transcribeAudio } from "./_core/voiceTranscription";
 import { z } from "zod";
 import * as db from "./db";
 import { determinarRamo } from "../shared/ramoUtils";
@@ -225,52 +228,105 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         await db.deleteAssociadoBeneficiario(input.id);
         return { success: true };
+    }),
+
+    responsaveis: router({
+      getByAssociadoId: protectedProcedure
+        .input(z.object({ associadoId: z.number() }))
+        .query(async ({ input }) => {
+          return db.getResponsavelByAssociadoId(input.associadoId);
+        }),
+
+      create: protectedProcedure
+        .input(responsavelLegalSchema)
+        .mutation(async ({ input }) => {
+          return db.createResponsavelLegal(input);
+        }),
+
+      update: protectedProcedure
+        .input(z.object({
+          id: z.number(),
+          data: responsavelLegalSchema.partial(),
+        }))
+        .mutation(async ({ input }) => {
+          return db.updateResponsavelLegal(input.id, input.data);
+        }),
+    }),
+
+    fichasMedicas: router({
+      getByAssociadoId: protectedProcedure
+        .input(z.object({ associadoId: z.number() }))
+        .query(async ({ input }) => {
+          return db.getFichaMedicaByAssociadoId(input.associadoId);
+        }),
+
+      create: protectedProcedure
+        .input(fichaMedicaSchema)
+        .mutation(async ({ input }) => {
+          return db.createFichaMedica(input as any);
+        }),
+
+      update: protectedProcedure
+        .input(z.object({
+          id: z.number(),
+          data: fichaMedicaSchema.partial(),
+        }))
+        .mutation(async ({ input }) => {
+          return db.updateFichaMedica(input.id, input.data as any);
+        }),
+    }),
+  }),
+
+  // Image generation via internal image service
+  image: router({
+    generate: protectedProcedure
+      .input(
+        z.object({
+          prompt: z.string().min(1),
+          originalImages: z
+            .array(
+              z.object({
+                url: z.string().optional(),
+                b64Json: z.string().optional(),
+                mimeType: z.string().optional(),
+              })
+            )
+            .optional(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        try {
+          const result = await generateImage(input as any);
+          if (!result || !result.url) {
+            throw new TRPCError({ code: "BAD_REQUEST", message: "Image generation failed" });
+          }
+          return result;
+        } catch (err) {
+          throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: err instanceof Error ? err.message : String(err) });
+        }
       }),
   }),
 
-  responsaveis: router({
-    getByAssociadoId: protectedProcedure
-      .input(z.object({ associadoId: z.number() }))
-      .query(async ({ input }) => {
-        return db.getResponsavelByAssociadoId(input.associadoId);
-      }),
-    
-    create: protectedProcedure
-      .input(responsavelLegalSchema)
+  // Voice transcription via internal whisper service
+  voice: router({
+    transcribe: protectedProcedure
+      .input(
+        z.object({
+          audioUrl: z.string().url(),
+          language: z.string().optional(),
+          prompt: z.string().optional(),
+        })
+      )
       .mutation(async ({ input }) => {
-        return db.createResponsavelLegal(input);
-      }),
-    
-    update: protectedProcedure
-      .input(z.object({
-        id: z.number(),
-        data: responsavelLegalSchema.partial(),
-      }))
-      .mutation(async ({ input }) => {
-        return db.updateResponsavelLegal(input.id, input.data);
-      }),
-  }),
-
-  fichasMedicas: router({
-    getByAssociadoId: protectedProcedure
-      .input(z.object({ associadoId: z.number() }))
-      .query(async ({ input }) => {
-        return db.getFichaMedicaByAssociadoId(input.associadoId);
-      }),
-    
-    create: protectedProcedure
-      .input(fichaMedicaSchema)
-      .mutation(async ({ input }) => {
-        return db.createFichaMedica(input);
-      }),
-    
-    update: protectedProcedure
-      .input(z.object({
-        id: z.number(),
-        data: fichaMedicaSchema.partial(),
-      }))
-      .mutation(async ({ input }) => {
-        return db.updateFichaMedica(input.id, input.data);
+        try {
+          const result = await transcribeAudio(input as any);
+          if ("error" in result) {
+            throw new TRPCError({ code: "BAD_REQUEST", message: result.error });
+          }
+          return result;
+        } catch (err) {
+          throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: err instanceof Error ? err.message : String(err) });
+        }
       }),
   }),
 });

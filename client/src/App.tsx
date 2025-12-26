@@ -4,20 +4,43 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { useAuth } from "./_core/hooks/useAuth";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import NovoAssociado from "./pages/NovoAssociado";
 import EditarAssociado from "./pages/EditarAssociado";
 import FichaMedica from "./pages/FichaMedica";
 
+interface ProtectedRouteProps {
+  component: React.ComponentType<any>;
+  path: string;
+  [key: string]: any;
+}
+
+import { LoginPage } from "./pages/Login";
+import { RegisterPage } from "./pages/Register";
+import { RecuperarSenhaPage } from "./pages/RecuperarSenha";
+
+function ProtectedRoute({ component: Component }: ProtectedRouteProps) {
+  const { user, loading } = useAuth({ redirectOnUnauthenticated: true });
+
+  if (loading) {
+    return <div>Carregando...</div>;
+  }
+
+  return user ? <Component /> : null;
+}
+
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/dashboard"} component={Dashboard} />
-      <Route path="/associados/novo" component={NovoAssociado} />
-      <Route path="/associados/:id/editar" component={EditarAssociado} />
+      <Route path={"/login"} component={LoginPage} />
+      <Route path={"/register"} component={RegisterPage} />
+      <Route path={"/recuperar-senha"} component={RecuperarSenhaPage} />
+      <Route path={"/dashboard"} component={() => <ProtectedRoute component={Dashboard} path="/dashboard" />} />
+      <Route path="/associados/novo" component={() => <ProtectedRoute component={NovoAssociado} path="/associados/novo" />} />
+      <Route path="/associados/:id/editar" component={() => <ProtectedRoute component={EditarAssociado} path="/associados/:id/editar" />} />
       <Route path="/associados/:id/ficha-medica" component={FichaMedica} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

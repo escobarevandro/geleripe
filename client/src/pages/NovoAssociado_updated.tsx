@@ -139,7 +139,7 @@ export default function NovoAssociado() {
     },
   });
 
-  const createResponsavel = trpc.responsaveis.create.useMutation();
+  const createResponsavel = trpc.associados.responsaveis.create.useMutation();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

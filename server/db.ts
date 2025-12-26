@@ -19,13 +19,26 @@ let _db: ReturnType<typeof drizzle> | null = null;
 
 // Lazily create the drizzle instance so local tooling can run without a DB.
 export async function getDb() {
-  if (!_db && process.env.DATABASE_URL) {
+  if (!_db) {
     try {
-      _db = drizzle(process.env.DATABASE_URL);
+      // Se DATABASE_URL não estiver definido, construa a URL a partir das outras variáveis
+      const dbUrl = process.env.DATABASE_URL || 
+        `mysql://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_HOST}:3306/${process.env.DATABASE_NAME}`;
+      
+      const mysql = require('mysql2/promise');
+      const connection = await mysql.createConnection(dbUrl);
+      _db = drizzle(connection);
     } catch (error) {
       console.warn("[Database] Failed to connect:", error);
       _db = null;
     }
+  }
+  return _db;
+}
+
+export function db() {
+  if (!_db) {
+    throw new Error('Database not initialized. Call getDb() first.');
   }
   return _db;
 }

@@ -5,21 +5,36 @@ import { boolean, date, decimal, int, mysqlEnum, mysqlTable, text, timestamp, va
  * Extend this file with additional tables as your product grows.
  * Columns use camelCase to match both database fields and generated types.
  */
-export const users = mysqlTable("users", {
-  /**
-   * Surrogate primary key. Auto-incremented numeric value managed by the database.
-   * Use this for relations between tables.
-   */
+export const users = mysqlTable("usuarios_login", {
   id: int("id").autoincrement().primaryKey(),
-  /** Manus OAuth identifier (openId) returned from the OAuth callback. Unique per user. */
-  openId: varchar("openId", { length: 64 }).notNull().unique(),
+  // OAuth openId (if using external auth)
+  openId: varchar("openId", { length: 64 }).default(''),
+  // Optional username for local auth
+  username: varchar("username", { length: 64 }).default(''),
+  // Existing legacy password column (senha) kept for compatibility
+  senha: varchar("senha", { length: 255 }).default(''),
+  // Optional passwordHash field (some code may reference this)
+  passwordHash: varchar("passwordHash", { length: 255 }).default(''),
   name: text("name"),
-  email: varchar("email", { length: 320 }),
-  loginMethod: varchar("loginMethod", { length: 64 }),
+  // Email can be nullable for legacy records that don't have it
+  email: varchar("email", { length: 320 }).unique(),
+  loginMethod: varchar("loginMethod", { length: 64 }).default('local'),
   role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
   lastSignedIn: timestamp("lastSignedIn").defaultNow().notNull(),
+  // legacy creation timestamp column name support
+  data_criacao: timestamp("data_criacao").defaultNow().notNull(),
+  status: mysqlEnum("status", ["ativo", "inativo"]).default("ativo"),
+});
+
+export const resetPasswordTokens = mysqlTable("reset_password_tokens", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("user_id").notNull(),
+  token: varchar("token", { length: 6 }).notNull(),
+  expiresAt: timestamp("expires_at").notNull(),
+  used: boolean("used").default(false).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export type User = typeof users.$inferSelect;

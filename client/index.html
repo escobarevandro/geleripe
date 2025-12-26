@@ -19,10 +19,25 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+    <script type="module">
+      // Dynamically load Umami only when analytics endpoint and website id are configured.
+      const ANALYTICS_ENDPOINT = import.meta.env.VITE_ANALYTICS_ENDPOINT;
+      const ANALYTICS_WEBSITE_ID = import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
+      if (ANALYTICS_ENDPOINT && ANALYTICS_WEBSITE_ID) {
+        try {
+          const endpoint = ANALYTICS_ENDPOINT.replace(/\/$/, '');
+          const s = document.createElement('script');
+          s.defer = true;
+          s.src = `${endpoint}/umami`;
+          s.setAttribute('data-website-id', ANALYTICS_WEBSITE_ID);
+          document.body.appendChild(s);
+        } catch (e) {
+          // swallow errors to avoid breaking the page in dev
+          // eslint-disable-next-line no-console
+          console.warn('Failed to load analytics script', e);
+        }
+      }
+    </script>
   </body>
 
 </html>

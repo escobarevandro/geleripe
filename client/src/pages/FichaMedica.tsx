@@ -20,7 +20,7 @@ export default function FichaMedica() {
   const utils = trpc.useUtils();
 
   const { data: associadoInfo, isLoading } = trpc.associados.getById.useQuery({ id: associadoId });
-  const { data: fichaExistente, isLoading: isLoadingFicha } = trpc.fichasMedicas.getByAssociadoId.useQuery({ associadoId });
+  const { data: fichaExistente, isLoading: isLoadingFicha } = trpc.associados.fichasMedicas.getByAssociadoId.useQuery({ associadoId });
 
   const [fichaData, setFichaData] = useState<any>({
     associadoId: associadoId,
@@ -137,7 +137,7 @@ export default function FichaMedica() {
     }
   }, [fichaExistente]);
 
-  const createFicha = trpc.fichasMedicas.create.useMutation({
+  const createFicha = trpc.associados.fichasMedicas.create.useMutation({
     onSuccess: () => {
       toast.success("Ficha médica cadastrada com sucesso!");
       utils.associados.list.invalidate();
@@ -148,7 +148,7 @@ export default function FichaMedica() {
     },
   });
 
-  const updateFicha = trpc.fichasMedicas.update.useMutation({
+  const updateFicha = trpc.associados.fichasMedicas.update.useMutation({
     onSuccess: () => {
       toast.success("Ficha médica atualizada com sucesso!");
       utils.associados.list.invalidate();

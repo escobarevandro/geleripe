@@ -3,7 +3,7 @@ export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 // Default values for environment variables
 const DEFAULT_ENV = {
   APP_TITLE: "Grupo Escoteiro Leripe",
-  APP_LOGO: "/logos/logo_leripe_branco_sombra.png",
+  APP_LOGO: "/logos/leripe_sem_fundo.png",
   OAUTH_PORTAL_URL: "http://localhost:3000",
   APP_ID: "leripe-local",
   ANALYTICS_ENDPOINT: "http://localhost:3000",
