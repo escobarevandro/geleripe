@@ -165,6 +165,9 @@ html::before {
   opacity: 0.6;
   pointer-events: none;
   z-index: 1; /* below site-content (2) but above body (which has z-index: auto) */
+  /* If the source image is a white logo on transparent background it will be invisible on a white page.
+     Invert colors and add a subtle drop-shadow so the watermark remains visible on light backgrounds. */
+  filter: invert(1) drop-shadow(0 6px 18px rgba(0,0,0,0.12));
 }
 
 @layer components {
