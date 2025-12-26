@@ -11,7 +11,7 @@ const ramoConfig = {
   "Escoteiro": { color: "bg-green-600 text-white", icon: "/ramos/escoteiro.png" },
   "Sênior": { color: "bg-red-600 text-white", icon: "/ramos/senior.png" },
   "Pioneiro": { color: "bg-red-700 text-white", icon: "/ramos/pioneiro.png" },
-  "Chefia Leripe": { color: "bg-blue-700 text-white", icon: "/logo_leripe_branco_sombra.png" },
+  "Chefia Leripe": { color: "bg-blue-700 text-white", icon: "/leripe_sem_fundo.png" },
 };
 
 export function RamoBadge({ ramo, showIcon = false }: RamoBadgeProps) {

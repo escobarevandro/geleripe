@@ -63,7 +63,7 @@ export default function DashboardLayout({
             <div className="relative group">
               <div className="relative">
                 <img
-                  src="/logos/logo_leripe_branco_sombra.png"
+                  src="/logos/leripe_sem_fundo.png"
                   alt={APP_TITLE}
                   className="h-20 w-20 rounded-xl object-contain shadow"
                 />
@@ -172,7 +172,7 @@ function DashboardLayoutContent({
               {isCollapsed ? (
                 <div className="relative h-8 w-8 shrink-0 group">
                   <img
-                    src="/logos/logo_leripe_branco_sombra.png"
+                    src="/logos/leripe_sem_fundo.png"
                     className="h-8 w-8 rounded-md object-contain"
                     alt="Grupo Escoteiro Leripe"
                   />
@@ -187,7 +187,7 @@ function DashboardLayoutContent({
                 <>
                   <div className="flex items-center gap-3 min-w-0">
                     <img
-                      src="/logos/logo_leripe_branco_sombra.png"
+                      src="/logos/leripe_sem_fundo.png"
                       className="h-8 w-8 rounded-md object-contain shrink-0"
                       alt="Grupo Escoteiro Leripe"
                     />

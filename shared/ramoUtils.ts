@@ -57,7 +57,7 @@ export function determinarRamo(dataNascimento: Date | string): RamoInfo {
   } else {
     return {
       nome: "Chefia Leripe",
-      simbolo: "/images/logo_leripe_branco_sombra.png",
+      simbolo: "/images/leripe_sem_fundo.png",
       cor: "#1E3A8A"
     };
   }
