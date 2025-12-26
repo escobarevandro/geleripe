@@ -140,9 +140,10 @@ body::before {
   inset: 0; /* cover the viewport */
   background-image: url('/logos/leripe_sem_fundo.png');
   background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 30vw; /* scale responsively */
+  background-position: center center; /* center the large logo */
+  background-size: 70vw; /* make the logo large */
   opacity: 0.6; /* 60% transparency */
+  background-color: transparent;
   pointer-events: none;
   z-index: 0; /* behind content */
 }
