@@ -133,20 +133,7 @@
   }
 }
 
-/* Decorative background logo using a pseudo-element on html (behind body background) */
-html::before {
-  content: "";
-  position: fixed;
-  inset: 0; /* cover the viewport */
-  background-image: url('/logos/leripe_sem_fundo.png');
-  background-repeat: no-repeat;
-  background-position: center center; /* center the large logo */
-  background-size: 70vw; /* make the logo large */
-  opacity: 0.6; /* 60% transparency */
-  background-color: transparent;
-  pointer-events: none;
-  z-index: 0; /* behind content */
-}
+/* (removed html::before to avoid duplicate overlays) */
 
 /* Ensure app content is rendered above the decorative logo */
 .site-content {
@@ -158,16 +145,15 @@ html::before {
 .watermark {
   position: fixed;
   inset: 0;
-  background-image: url('/logos/leripe_sem_fundo.png');
+  background-image: url('/logos/logo_leripe_branco_sombra.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 70vw;
   opacity: 0.6;
   pointer-events: none;
   z-index: 1; /* below site-content (2) but above body (which has z-index: auto) */
-  /* If the source image is a white logo on transparent background it will be invisible on a white page.
-     Invert colors and add a subtle drop-shadow so the watermark remains visible on light backgrounds. */
-  filter: invert(1) drop-shadow(0 6px 18px rgba(0,0,0,0.12));
+  /* keep a subtle drop-shadow to improve contrast if needed */
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.12));
 }
 
 @layer components {
