@@ -83,6 +83,8 @@ function App() {
             <Toaster />
             <Router />
           </div>
+          {/* Watermark DOM element to ensure visibility over body background */}
+          <div className="watermark" aria-hidden="true"></div>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
