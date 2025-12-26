@@ -5,6 +5,8 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { useAuth } from "./_core/hooks/useAuth";
+import { useEffect } from "react";
+import { useLocation } from "wouter";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import NovoAssociado from "./pages/NovoAssociado";
@@ -55,6 +57,21 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    // Add background logo only on the home route
+    if (location === "/") {
+      document.body.classList.add("has-bg-logo");
+    } else {
+      document.body.classList.remove("has-bg-logo");
+    }
+    // cleanup on unmount
+    return () => {
+      document.body.classList.remove("has-bg-logo");
+    };
+  }, [location]);
+
   return (
     <ErrorBoundary>
       <ThemeProvider
