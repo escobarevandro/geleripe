@@ -68,8 +68,10 @@ function App() {
             // eslint-disable-next-line @next/next/no-img-element
             <img src={APP_LOGO} alt="" className="app-logo-overlay" />
           )}
-          <Toaster />
-          <Router />
+          <div className="site-content">
+            <Toaster />
+            <Router />
+          </div>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

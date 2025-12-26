@@ -142,8 +142,14 @@
   max-width: 30vw;
   opacity: 0.6; /* 60% transparency */
   pointer-events: none;
-  z-index: -1; /* sit behind content */
+  z-index: 0; /* sit behind content (content will be above at z-index:1) */
   filter: none;
+}
+
+/* Ensure app content is rendered above the decorative logo */
+.site-content {
+  position: relative;
+  z-index: 1;
 }
 
 @layer components {
