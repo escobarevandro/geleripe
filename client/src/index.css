@@ -148,8 +148,8 @@
   background-image: url('/logos/logo_leripe_branco_sombra.png');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 70vw;
-  opacity: 0.6;
+  background-size: 30vw;
+  opacity: 0.5;
   pointer-events: none;
   z-index: 1; /* below site-content (2) but above body (which has z-index: auto) */
   /* keep a subtle drop-shadow to improve contrast if needed */
