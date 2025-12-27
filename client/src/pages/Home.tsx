@@ -36,8 +36,8 @@ export default function Home() {
           backgroundImage: "url('/logos/leripe_sem_fundo.png')",
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center center',
-          backgroundSize: '30vw',
-          opacity: 0.6,
+          backgroundSize: '51vw',
+          opacity: 0.3,
         }}
         aria-hidden="true"
       />
@@ -55,6 +55,7 @@ export default function Home() {
             onClick={() => setLocation('/login')}
             variant="outline"
             className="bg-white text-black hover:bg-orange-50"
+            style={{ opacity: 0.5 }}
           >
             Entrar
           </Button>
@@ -74,6 +75,7 @@ export default function Home() {
             onClick={() => setLocation('/login')}
             size="lg"
             className="bg-white text-black hover:bg-orange-50 text-lg px-8 py-6"
+            style={{ opacity: 0.5 }}
           >
             Acessar Sistema
           </Button>
