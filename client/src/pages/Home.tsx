@@ -28,8 +28,21 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-900 via-orange-800 to-orange-600">
-      {/* Header */}
+    <div className="min-h-screen bg-white relative">
+      {/* Watermark background */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage: "url('/logos/leripe_sem_fundo.png')",
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center center',
+          backgroundSize: '30vw',
+          opacity: 0.6,
+        }}
+        aria-hidden="true"
+      />
+      
+      <div className="relative z-10">
       <header className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -52,10 +65,10 @@ export default function Home() {
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl font-bold text-black mb-6">
-            Sistema de Gestão de Associados
+            Sistema de Gestão Escoteira - SGE
           </h2>
           <p className="text-xl text-black mb-8">
-            Plataforma completa para gerenciamento de fichas de registro individual e fichas médicas dos escoteiros do Grupo Leripe.
+            Plataforma completa para gerenciamento de fichas de registro individual e fichas médicas dos escoteiros.
           </p>
           <Button
             onClick={() => setLocation('/login')}
@@ -126,6 +139,7 @@ export default function Home() {
           <p>&copy; 2025 Grupo Escoteiro 5/RJ - LERIPE. Todos os direitos reservados.</p>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
