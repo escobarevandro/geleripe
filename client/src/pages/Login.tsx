@@ -51,7 +51,7 @@ export function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 relative">
+    <div className="min-h-screen flex items-center justify-center bg-white relative">
       {/* Watermark background for login page */}
       <div 
         className="fixed inset-0 pointer-events-none z-0"
@@ -60,11 +60,11 @@ export function LoginPage() {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center center',
           backgroundSize: '30vw',
-          opacity: 0.7,
+          opacity: 0.6,
         }}
         aria-hidden="true"
       />
-      <Card className="w-full max-w-md p-6 relative z-10">
+      <Card className="w-full max-w-md p-6 relative z-10" style={{ backgroundColor: 'rgba(255, 255, 255, 0.6)' }}>
         <h1 className="text-2xl font-bold text-center mb-6">Login</h1>
         
         {error && (
