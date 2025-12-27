@@ -82,7 +82,7 @@ export function LoginPage() {
               value={formData.email}
               onChange={handleChange}
               required
-              style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
             />
           </div>
           
@@ -94,7 +94,7 @@ export function LoginPage() {
               value={formData.password}
               onChange={handleChange}
               required
-              style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
             />
           </div>
 
