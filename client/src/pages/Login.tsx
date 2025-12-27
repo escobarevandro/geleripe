@@ -64,7 +64,7 @@ export function LoginPage() {
         }}
         aria-hidden="true"
       />
-      <Card className="w-full max-w-md p-6 relative z-10" style={{ backgroundColor: 'rgba(255, 255, 255, 0.6)' }}>
+      <Card className="w-full max-w-md p-6 relative z-10" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
         <h1 className="text-2xl font-bold text-center mb-6">Login</h1>
         
         {error && (
