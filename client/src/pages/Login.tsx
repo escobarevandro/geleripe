@@ -82,7 +82,7 @@ export function LoginPage() {
               value={formData.email}
               onChange={handleChange}
               required
-              style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}
             />
           </div>
           
@@ -94,7 +94,7 @@ export function LoginPage() {
               value={formData.password}
               onChange={handleChange}
               required
-              style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}
             />
           </div>
 
@@ -117,6 +117,14 @@ export function LoginPage() {
             <a href="/recuperar-senha" className="text-blue-600 hover:text-blue-800">
               Esqueceu sua senha?
             </a>
+          </div>
+          <div>
+            <button
+              onClick={() => setLocation('/')}
+              className="text-blue-600 hover:text-blue-800"
+            >
+              Home
+            </button>
           </div>
         </div>
       </Card>
